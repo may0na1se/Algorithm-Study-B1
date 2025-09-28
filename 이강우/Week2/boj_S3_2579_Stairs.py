@@ -1,5 +1,5 @@
 '''
-문제: https://www.acmicpc.net/problem/14889
+문제: https://www.acmicpc.net/problem/2579
 접근: 약간 Greedy 같은 규칙 적용하면 되지 않을까 싶은데, 구현을 못하겠음
 아마 계단 수가 달라지거나 하면, Greedy가 깨지는 듯
 S가 300이니까 재귀는 당연히 아니고...
