@@ -7,7 +7,7 @@ visited = [0] * (N + 1)
 compute = deque([N])
 result = 0
 flag = False
-while N > 1:
+while True:
     result += 1
     for _ in range(len(compute)):
         now = compute.popleft()
@@ -35,15 +35,15 @@ while N > 1:
 print(result)
 
 
-# # DP로도 가능?
-#
-# N = int(input())
-# dp = [0] * (N + 1)
-# for i in range(2, N + 1):
-#     dp[i] = dp[i - 1] + 1
-#     if not (i % 3):
-#         dp[i] = min(dp[i], dp[i // 3] + 1)
-#     if not (i % 2):
-#         dp[i] = min(dp[i], dp[i // 2] + 1)
-#
-# print(dp[N])
+# DP로도 가능?
+
+N = int(input())
+dp = [0] * (N + 1)
+for i in range(2, N + 1):
+    dp[i] = dp[i - 1] + 1
+    if not (i % 3):
+        dp[i] = min(dp[i], dp[i // 3] + 1)
+    if not (i % 2):
+        dp[i] = min(dp[i], dp[i // 2] + 1)
+
+print(dp[N])
