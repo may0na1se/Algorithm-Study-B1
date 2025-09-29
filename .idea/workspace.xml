@@ -1,15 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="be405709-4a99-459e-a5f8-23cc27a960f8" name="변경" comment="" />
+    <list default="true" id="be405709-4a99-459e-a5f8-23cc27a960f8" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/신원호/2주차/1_boj_1238.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/신원호/2주차/2_boj_1647.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/신원호/2주차/3_boj_14889.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/신원호/2주차/4_boj_2579.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/신원호/2주차/5_boj_1654.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/신원호/2주차/6_boj_11286.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1주차/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1주차/.idea/1주차_백준_6문제_신원호.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1주차/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1주차/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1주차/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1주차/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1주차/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1주차/11279.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1주차/1463.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1주차/14888.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1주차/1715.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1주차/1759.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1주차/1916.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="33BsnP6CcOHPkfq8hZ0zSVr90UW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -17,7 +50,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.4_boj_2579.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -36,5 +73,16 @@
       <updated>1758801966773</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/신원호/2주차/4_boj_2579.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
