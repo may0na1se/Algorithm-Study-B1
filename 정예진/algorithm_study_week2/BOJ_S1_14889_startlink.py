@@ -1,3 +1,8 @@
+# 접근방법 : KKR의 요리사 문제와 동일한? 문제
+# N수가 크지 않으니 재귀로 돌립니다 -> 주어진 인원 중 절반 고르는 조합 구하기
+# get_synergy : 조합에 있으면 A팀, 없으면 B팀
+# calculate : 각 팀별 시너지 계산
+
 import sys
 
 N = int(sys.stdin.readline())

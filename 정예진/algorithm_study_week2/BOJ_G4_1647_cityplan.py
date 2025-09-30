@@ -1,3 +1,5 @@
+# 접근방법 : MST로 마을 전체 한 줄로 잇고 가장 비용이 큰 간선 없애기
+
 import sys
 from heapq import heappop, heappush
 
