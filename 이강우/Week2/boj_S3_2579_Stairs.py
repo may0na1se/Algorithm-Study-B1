@@ -7,37 +7,31 @@
 시간복잡도: 
 '''
 
-
-def func(cnt, now, total):
-    global max_score
-    if now == 0:
-        max_score = max(max_score, total)
-        return
-    
-    if (cnt, now, total) in dp:
-        return
-    
-    dp.add((cnt, now, total))
-    
-    if cnt == 2:
-        if now - 2 >= 0:
-            func(1, now-2, total + scores[now-2])
-        else:
-            return
-    
-    else:
-        func(2, now-1, total + scores[now-1])
-        if now - 2 >= 0:
-            func(1, now-2, total + scores[now-2])
-        else:
-            return
-    
+   
 
 S = int(input())
 scores = [int(input()) for _ in range(S)]
 
-dp = set()
-max_score = 0
+if S == 1:
+    print(scores[0])
 
-func(1, S-1, scores[S-1])
-print(max_score)
+elif S == 2:
+    print(scores[0] + scores[1])
+
+else:
+    # 1칸 전에서 온게 index 0, 2칸 전에서 온 게 index 1
+    dp = [[0, 0] for _ in range(S)]
+
+    # 첫번째 계단
+    dp[0][0] = scores[0]
+    # 두번째 계단
+    dp[1][0] = scores[1] + dp[0][0]
+    dp[1][1] = scores[1] # 2칸 전이 없으니
+
+    for i in range(2, S):
+        dp[i][0] = scores[i] + dp[i-1][1] # 1칸 전에서 왔다. -> 연속 3칸은 불가
+        dp[i][1] = scores[i] + max(dp[i-2]) # 2칸 전에서 왔다.
+
+    # print(scores)
+    # print(dp)
+    print(max(dp[-1]))
