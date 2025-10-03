@@ -1,26 +1,43 @@
 '''
 문제: https://www.acmicpc.net/problem/2579
-접근: 약간 Greedy 같은 규칙 적용하면 되지 않을까 싶은데, 구현을 못하겠음
-아마 계단 수가 달라지거나 하면, Greedy가 깨지는 듯
-S가 300이니까 재귀는 당연히 아니고...
+접근: 원호님의 힌트로 DP로 푸는 것이라는 것을 알게 되었다.
+그래서 set()을 만들어서 DP로 풀어보았다.
+근데 메모리 초과 뜸
 
 시간복잡도: 
 '''
 
 
 def func(cnt, now, total):
-    if now == S-1:
-        return total
+    global max_score
+    if now == 0:
+        max_score = max(max_score, total)
+        return
     
+    if (cnt, now, total) in dp:
+        return
     
+    dp.add((cnt, now, total))
     
-    pass
-
+    if cnt == 2:
+        if now - 2 >= 0:
+            func(1, now-2, total + scores[now-2])
+        else:
+            return
+    
+    else:
+        func(2, now-1, total + scores[now-1])
+        if now - 2 >= 0:
+            func(1, now-2, total + scores[now-2])
+        else:
+            return
+    
 
 S = int(input())
 scores = [int(input()) for _ in range(S)]
 
-a = func(1, 0, scores[0])
-b = func(1, 1, scores[1])
+dp = set()
+max_score = 0
 
-print(max(a, b))
+func(1, S-1, scores[S-1])
+print(max_score)
