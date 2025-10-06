@@ -1,8 +1,8 @@
 '''
 문제: https://www.acmicpc.net/problem/1753
-접근:
+접근: 그냥 다익스트라처럼 풀었음
 
-시간복잡도:
+시간복잡도: 다익스트라니까 O(VlogE) 아마도
 '''
 
 import sys
