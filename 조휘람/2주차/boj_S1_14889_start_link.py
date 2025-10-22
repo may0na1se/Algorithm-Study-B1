@@ -22,6 +22,9 @@ def recur(n, p, s_lst):
         result = min(abs(cnt_s - cnt_l), result)
         return
     for i in range(p,N):
-        recur(n+1, i+1, s_lst + [i])
+        # append
+        s_lst.append(i)
+        recur(n+1, i+1, s_lst)
+        s_lst.pop()
 recur(0,0,[])
 print(result)
