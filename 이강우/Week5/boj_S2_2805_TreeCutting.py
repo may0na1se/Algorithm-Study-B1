@@ -1,6 +1,7 @@
 '''
 문제: https://www.acmicpc.net/problem/2805
-접근: 이진탐색이라고 생각했음 근데 다 틀림
+접근: 이진탐색이라고 생각했음. 코드 잘 기억해서 다시 풀음.
+다만, 시간이 너무 많이 걸리는 것 같음
 
 시간복잡도:
 '''
@@ -8,29 +9,23 @@
 N, M = map(int, input().split())
 
 trees = list(map(int, input().split()))
-trees.sort()
 
 lower = 1
-upper = trees[-1]
+upper = max(trees)
 
-while lower < upper:
-    mid = (lower + upper) // 2
+while lower <= upper:
+  mid = (lower + upper) // 2
 
-    earned = 0
+  cut = 0
 
-    for i in range(N):
-        if trees[i] <= mid:
-            continue
-        earned += trees[i] - mid
-    
-    if earned > M:
-        lower = mid + 1
-    elif earned < M:
-        upper = mid - 1
-    elif earned == M:
-        break
+  for tree in trees:
+    if tree > mid:
+      cut += tree - mid
 
-if earned == M:
-    print(mid)
-else:
-    print(lower)
+  if cut < M:
+    upper = mid - 1
+  else:
+    lower = mid + 1
+
+# print(lower)
+print(upper)
