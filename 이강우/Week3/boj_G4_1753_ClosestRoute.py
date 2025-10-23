@@ -25,6 +25,10 @@ pq = [(0, K)]
 while pq:
     cur_cost, cur_node = heappop(pq)
 
+    # 대 원 호의 조언
+    if visited[cur_node] <= cur_cost:
+        continue
+
     for next_cost, next_node in edges[cur_node]:
         if visited[next_node] <= next_cost + cur_cost:
             continue
