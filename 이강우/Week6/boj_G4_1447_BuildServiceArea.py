@@ -2,7 +2,7 @@
 문제: https://www.acmicpc.net/problem/1477
 접근:
 
-시간복잡도:
+시간복잡도: 
 '''
 
 # 가장 긴 구간을 절반이 아니라, N개로 나눌 수도 있다
@@ -17,29 +17,31 @@ locations = sorted(list(map(int, input().split())))
 
 distance = []
 
-for i in range(N):
-    if i == 0:
-        heappush(distance, -locations[i])
+if N == 0:  # N == 0인 경우는 for 문으로 휴게소 간 거리를 잴 수가 없음!
+    heappush(distance, (-L, -L, 1))
+else:
+    for i in range(N):
+        if i == 0:
+            heappush(distance, (-locations[i], -locations[i], 1))
 
-    if i == len(locations) - 1:
-        heappush(distance, -(L - locations[i]))
-        continue
-  
-    heappush(distance, -(locations[i+1] - locations[i]))
+        if i == len(locations) - 1:
+            heappush(distance, (-(L - locations[i]), -(L - locations[i]), 1))
+            continue
+    
+        heappush(distance, (-(locations[i+1] - locations[i]), -(locations[i+1] - locations[i]), 1))
 
-print(locations)
-print(distance)
+# print(locations)
+# print(distance)
 
 while M:
-    max_dist = (-1) * heappop(distance)
-    
-    dist1 = max_dist // 2
-    dist2 = max_dist - dist1
+    max_dist, original, divided = heappop(distance)
+    divided += 1
 
-    heappush(distance, -dist1)
-    heappush(distance, -dist2)
+    dist = original // divided  # 음수 양수 // 계산 차이 조심
+
+    heappush(distance, (dist, original, divided))
 
     M -= 1
 
-print(distance)
-print(-distance[0])
+# print(distance)
+print(-distance[0][0])
