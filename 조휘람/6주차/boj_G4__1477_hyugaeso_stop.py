@@ -2,28 +2,25 @@ import sys
 input = sys.stdin.readline
 
 N, M, L = map(int, input().split())
-
-
+arr = [*map(int, input().split())]
+arr = sorted(arr, reverse=False)
+arr.append(L)
+arr.insert(0,0)
+# print(arr)
 def test(x):
-  cnt = 1
-  cur_min = arr[0]
-  cur_max = arr[0]
-  
-  for v in arr[1:]:
-    cur_min = min(cur_min, v)
-    cur_max = max(cur_max, v)
-    
-    if cur_max - cur_min > x:
-      cnt += 1
-      cur_min = v
-      cur_max = v
-      if cnt > M:
+    cnt = 0
+    for i in range(1, N+2):
+        distance = arr[i] - arr[i - 1]
+        cnt += (distance - 1) // x
+    if cnt > M:
         return False
-  return True
+    else:
+        return True
 
-min_result = 0
-max_result = max(arr) - min(arr)
-result = max_result 
+
+min_result = 1
+max_result = max(arr)
+
 while min_result <=max_result:
   mid = (min_result + max_result) // 2
   if test(mid):
