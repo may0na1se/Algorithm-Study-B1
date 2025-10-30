@@ -1,5 +1,5 @@
 # boj 1182 부분수열의 합
-# 백트래킹
+# dfs
 # O(2^N)
 
 def subsetsum(n, s):
