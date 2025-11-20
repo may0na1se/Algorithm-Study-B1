@@ -3,7 +3,7 @@ import sys
 input = sys.stdin.readline
 
 N = int(input())
-arr = sorted(list(map(int, input().split())))
+arr = list(map(int, input().split()))
 
 l,r = 0, N-1
 min_val = float('inf')
@@ -19,5 +19,6 @@ while l<r:
         r -= 1
     else:
         l += 1
+
 
 print(ans[0],ans[1])
