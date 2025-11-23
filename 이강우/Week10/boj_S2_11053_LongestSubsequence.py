@@ -18,4 +18,5 @@ for i in range(N):
         if A[j] < A[i]:
             dp[i] = max(dp[i], dp[j] + 1)
 
+# 이거 잡을 수 있는 TC가 없었나봄
 print(dp[-1])
